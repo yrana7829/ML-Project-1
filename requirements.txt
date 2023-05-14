@@ -4,4 +4,4 @@ scipy
 matplotlib
 seaborn
 
--e .
+# -e .
