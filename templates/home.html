@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Form</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body style="background-color: #f1f1f1">
+    <div class="container">
+      <h1 class="text-center mt-4" style="color: #333">
+        Student Exam Performance Indicator
+      </h1>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <fieldset>
+              <legend style="color: #555">Select all the fields</legend>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="gender" style="color: #555">Gender</label>
+                    <select
+                      class="form-control"
+                      id="gender"
+                      name="gender"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select your Gender
+                      </option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="ethnicity" style="color: #555"
+                      >Race or Ethnicity</label
+                    >
+                    <select
+                      class="form-control"
+                      id="ethnicity"
+                      name="ethnicity"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select Ethnicity
+                      </option>
+                      <option value="group A">Group A</option>
+                      <option value="group B">Group B</option>
+                      <option value="group C">Group C</option>
+                      <option value="group D">Group D</option>
+                      <option value="group E">Group E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="education" style="color: #555"
+                      >Parental Level of Education</label
+                    >
+                    <select
+                      class="form-control"
+                      id="education"
+                      name="parental_level_of_education"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select Parent Education
+                      </option>
+                      <option value="associate's degree">
+                        Associate's Degree
+                      </option>
+                      <option value="bachelor's degree">
+                        Bachelor's Degree
+                      </option>
+                      <option value="high school">High School</option>
+                      <option value="master's degree">Master's Degree</option>
+                      <option value="some college">Some College</option>
+                      <option value="some high school">Some High School</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lunch" style="color: #555">Lunch Type</label>
+                    <select
+                      class="form-control"
+                      id="lunch"
+                      name="lunch"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select Lunch Type
+                      </option>
+                      <option value="free/reduced">Free/Reduced</option>
+                      <option value="standard">Standard</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="course" style="color: #555"
+                      >Test Preparation Course</label
+                    >
+                    <select
+                      class="form-control"
+                      id="course"
+                      name="test_preparation_course"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select Test Course
+                      </option>
+                      <option value="none">None</option>
+                      <option value="completed">Completed</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reading-score" style="color: #555"
+                      >Writing Score out of 100</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="reading-score"
+                      name="reading_score"
+                      placeholder="Enter your Reading Score"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="writing-score" style="color: #555"
+                  >Reading Score out of 100</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="writing-score"
+                  name="writing_score"
+                  placeholder="Enter your Reading Score"
+                  min="0"
+                  max="100"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="background-color: #007bff"
+              >
+                Predict your Maths Score
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="border rounded p-3 mt-4" style="background-color: #fff">
+            <h2 class="text-center" style="color: #007bff">
+              The prediction is {{results}}
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, if needed) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

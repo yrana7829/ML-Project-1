@@ -18,7 +18,7 @@ from utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifact',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifact',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -96,7 +96,7 @@ class DataTransformation:
             X_train_array = preprocessor_obj.fit_transform(input_train)
             X_test_array = preprocessor_obj.transform(input_test)
 
-            # f) Combine the input and trgte features
+            # f) Combine the input and trgte features 
             print(X_test_array.shape)
             print(output_test.shape)
             train_array = np.c_[X_train_array, np.array(output_train)]
