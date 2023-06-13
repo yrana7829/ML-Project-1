@@ -8,8 +8,10 @@ src/pipelines: Stores all the pipelines used during the project.
 src/templates: Contains the UI components for the project
 
 **Files**
-logger.py: This file is used to log necessary information at various stages of the project for debugging purposes. Any exceptions that occur will be logged into a file.
-exception.py: Handles any exceptions occurring in project components. When an error is encountered, it will be returned as a proper error message.
+
+**logger.py**: This file is used to log necessary information at various stages of the project for debugging purposes. Any exceptions that occur will be logged into a file.
+
+**exception.py**: Handles any exceptions occurring in project components. When an error is encountered, it will be returned as a proper error message.
 
 **Project Components**
 The project components are stored in the src/components directory. These components are responsible for various tasks related to the student performance analysis.
